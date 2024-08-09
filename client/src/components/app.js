@@ -5,7 +5,14 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-        <h1>Your JS-Scaffold is up and running</h1>
+        <div class="d-flex w-full justify-content-between">
+          <button type="button" class="btn btn-link">
+            Carpool Rules and Procedures
+          </button>
+          <button type="button" class="btn btn-link">
+            Manage Events (Admin only)
+          </button>
+        </div>
         <Event
           eventName="LigerBots DCMP"
           eventDate="8/8/2024"
