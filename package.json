@@ -17,6 +17,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "watch": "^1.0.2",
     "yargs": "^16.2.0"
   },
   "devDependencies": {
