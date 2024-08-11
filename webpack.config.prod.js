@@ -1,56 +1,65 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-var WebpackMd5Hash = require('webpack-md5-hash');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+var WebpackMd5Hash = require("webpack-md5-hash");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 let config;
 try {
-  config = require('./config/build.json')
-  config.cdnPrefix = config.cdnPrefix.indexOf('$') === 0 ?
-    process.env[config.cdnPrefix.substring(1)] :
-    config.cdnPrefix || "";
+  config = require("./config/build.json");
+  config.cdnPrefix =
+    config.cdnPrefix.indexOf("$") === 0
+      ? process.env[config.cdnPrefix.substring(1)]
+      : config.cdnPrefix || "";
 } catch (err) {
   config = { cdnPrefix: "" };
 }
 
-const publicPath =  config.cdnPrefix || '';
+const publicPath = config.cdnPrefix || "";
 
 module.exports = {
-  mode: 'production',
-  entry: { index: ['@babel/polyfill', './client/src/index.js'] },
+  mode: "production",
+  entry: { index: ["@babel/polyfill", "./client/src/index.js"] },
   output: {
-      path: `${__dirname}/client/dist`,
-      filename: '[name].[chunkhash].js',
-      publicPath: '/'
+    path: `${__dirname}/client/dist`,
+    filename: "[name].[chunkhash].js",
+    publicPath: "/",
   },
   module: {
-      rules: [
-          {
-              test: /\.js$/,
-              exclude: /node_modules/,
-              use: {
-                  loader: 'babel-loader',
-                  options: {
-                      presets: [
-                          '@babel/preset-env',
-                          '@babel/preset-react'
-                      ]
-                  }
-              }
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
           {
-              test: /\.css$/,
-              use: [ 'style-loader', 'css-loader' ]
-          }
-      ]
+            loader: "file-loader",
+            options: {
+              name: "images/[hash]-[name].[ext]",
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'client/src/index.html',
-      publicPath
+      template: "client/src/index.html",
+      publicPath,
     }),
-    new WebpackMd5Hash()
+    new WebpackMd5Hash(),
   ],
   optimization: {
-      minimizer: [new UglifyJsPlugin({ include: /\.js$/ })]
-  }
-}
+    minimizer: [new UglifyJsPlugin({ include: /\.js$/ })],
+  },
+};
