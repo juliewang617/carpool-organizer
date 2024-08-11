@@ -20,9 +20,7 @@ export default function Event(props) {
           class="bg-light"
           style={{ width: "2rem", marginRight: "0.5rem" }}
           onClick={() => setIsExpanded(!isExpanded)}
-        >
-          ^
-        </button>
+        ></button>
         <div class="h-100 d-flex flex-column" style={{ flexGrow: 1 }}>
           <div class="d-flex mb-1" style={{ height: "2rem" }}>
             <h5 class="me-3 my-auto fw-bold">{props.eventName}</h5>
