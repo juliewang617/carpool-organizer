@@ -1,33 +1,47 @@
 import React from "react";
 import Event from "./Event";
 import RulesModal from "./RulesModal";
+import { eventData } from "../sampleData/eventData";
 
 export default class extends React.Component {
   render() {
     return (
-      <div>
+      <div class="w-100 min-vh-100">
         <div class="d-flex w-full justify-content-between">
           <button
             type="button"
-            class="btn btn-link"
             data-bs-toggle="modal"
             data-bs-target="#rulesModal"
+            style={{ background: "none", border: "none", color: "#3977ab" }}
           >
             Carpool Rules and Procedures
           </button>
-          <button type="button" class="btn btn-link">
+          <button
+            type="button"
+            style={{ background: "none", border: "none", color: "#3977ab" }}
+          >
             Manage Events (Admin only)
           </button>
+          <div id="rulesModal" class="modal fade" role="dialog">
+            <RulesModal />
+          </div>
         </div>
-        <Event
-          eventName="LigerBots DCMP"
-          eventDate="8/8/2024"
-          eventDescription="Pack lightly"
-          eventRides={["Hello"]}
-        />
 
-        <div id="rulesModal" class="modal fade" role="dialog">
-          <RulesModal />
+        <div
+          class="m-auto d-flex justify-content-center"
+          style={{ width: "90%" }}
+        >
+          <ul class="w-100">
+            {eventData.map((event) => (
+              <Event
+                eventName={event.eventName}
+                eventDate={event.eventDate}
+                eventDescription={event.eventDescription}
+                eventRides={event.eventRides}
+                key={event.key}
+              />
+            ))}
+          </ul>
         </div>
       </div>
     );
