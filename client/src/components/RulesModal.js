@@ -13,7 +13,7 @@ export default function RulesModal(props) {
         <div class="modal-body">
           <p>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Interdum est
-            arcu urna posuere porta cras? Taciti netus erat nec libero taciti
+            arcu urna posuere porta cras. Taciti netus erat nec libero taciti
             convallis aliquam. Vivamus praesent suspendisse augue ex blandit
             facilisi. Cubilia senectus placerat dignissim ut sagittis nostra
             nisl varius. Feugiat facilisis class natoque vehicula ex lacinia.
