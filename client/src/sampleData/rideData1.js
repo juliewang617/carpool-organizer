@@ -11,5 +11,6 @@ export const rideData1 = [
     departureLocation: "NSHS",
     returnTime: "4:00 p.m.",
     returnLocation: "NSHS",
+    notes: "Don't be late.",
   },
 ];

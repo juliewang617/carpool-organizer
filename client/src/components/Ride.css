@@ -1,0 +1,43 @@
+.car{
+    margin-right: 1rem; 
+    align-self: flex-start; 
+    width: 10rem; 
+    height: 4.5rem; 
+    position: relative;
+}
+
+.car img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: -100; 
+}
+
+.overlay-text { 
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    right: 15%;
+    text-align: center; 
+    z-index: 100;
+    color: white; 
+    font-style: italic;
+}
+
+.ride-info {
+    list-style: none; 
+    padding-left: 0; 
+}
+
+@media only screen and (max-width: 768px) {
+    .car {
+        width: 70%; 
+        margin: auto; 
+    }
+    .ride-info {
+        width: 70%; 
+        margin: auto; 
+        margin-top: 1rem; 
+    }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Arrow from "../assets/Arrow.svg";
+import Ride from "./Ride";
 
 export default function Event(props) {
   // an Event has the following props: name, date, description, list of rides,
@@ -64,7 +65,11 @@ export default function Event(props) {
                     align-items-center"
           >
             <i>Depart</i>
-            <p>{JSON.stringify(props.eventRides)}</p>
+            <div class="my-4 w-100">
+              {props.eventRides.map((ride) => (
+                <Ride />
+              ))}
+            </div>
           </div>
           <div
             class="w-50 border border-dark border-top-0 border-bottom-0 
