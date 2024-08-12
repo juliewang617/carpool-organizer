@@ -17,7 +17,7 @@
 .overlay-text { 
     position: absolute;
     top: 30%;
-    left: 10%;
+    left: 5%;
     right: 15%;
     text-align: center; 
     z-index: 100;
