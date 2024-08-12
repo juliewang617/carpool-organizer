@@ -1,0 +1,9 @@
+export const passengerData1 = [
+    {
+        name: "Sam", 
+        email: "sam@hotmail.com", 
+        phone: "987-654-321", 
+        address: "321 Bots St"
+    }
+]
+

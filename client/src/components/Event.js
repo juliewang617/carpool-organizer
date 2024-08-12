@@ -64,7 +64,7 @@ export default function Event(props) {
                     align-items-center"
           >
             <i>Depart</i>
-            <p>{props.eventRides}</p>
+            <p>{JSON.stringify(props.eventRides)}</p>
           </div>
           <div
             class="w-50 border border-dark border-top-0 border-bottom-0 
