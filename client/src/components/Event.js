@@ -15,7 +15,7 @@ export default function Event(props) {
     <div class="my-4 m-auto">
       <div
         class="text-light p-3 rounded d-flex"
-        style={{ height: "6rem", backgroundColor: "#3977ab" }}
+        style={{ backgroundColor: "#3977ab" }}
       >
         <button
           class="d-flex align-items-start"
@@ -34,9 +34,9 @@ export default function Event(props) {
           />
         </button>
         <div class="h-100 d-flex flex-column" style={{ flexGrow: 1 }}>
-          <div class="d-flex mb-1" style={{ height: "2rem" }}>
-            <h5 class="me-3 my-auto fw-bold">{props.eventName}</h5>
-            <p class="my-auto">{props.eventDate}</p>
+          <div class="d-flex mb-1 flex-column flex-md-row">
+            <h5 class="me-3 my-auto fw-bold text-start">{props.eventName}</h5>
+            <p class="my-auto text-start">{props.eventDate}</p>
           </div>
           <i class="text-start">{props.eventDescription}</i>
         </div>

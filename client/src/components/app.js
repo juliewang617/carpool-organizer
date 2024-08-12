@@ -29,9 +29,9 @@ export default class extends React.Component {
 
         <div
           class="m-auto d-flex justify-content-center"
-          style={{ width: "90%" }}
+          style={{ width: "90%", maxWidth: "60rem" }}
         >
-          <ul class="w-100">
+          <ul class="w-100" style={{ paddingLeft: 0 }}>
             {eventData.map((event) => (
               <Event
                 eventName={event.eventName}
