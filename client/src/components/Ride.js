@@ -38,7 +38,7 @@ export default function Ride(props) {
         </div>
       </div>
 
-      <div class="text-start">
+      <div class="text-start flex-grow-1">
         <ul class="ride-info">
           <li>
             Driver: <p class="ride-info-text">{driver.name}</p>{" "}
