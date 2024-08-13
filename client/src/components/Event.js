@@ -67,7 +67,7 @@ export default function Event(props) {
             <i>Depart</i>
             <div class="my-4 w-100">
               {props.eventRides.map((ride) => (
-                <Ride />
+                <Ride props={{ type: "depart", ...ride }} />
               ))}
             </div>
           </div>
@@ -76,6 +76,11 @@ export default function Event(props) {
           border-start-0 p-3 d-flex flex-column align-items-center"
           >
             <i>Return</i>
+            <div class="my-4 w-100">
+              {props.eventRides.map((ride) => (
+                <Ride props={{ type: "return", ...ride }} />
+              ))}
+            </div>
           </div>
         </div>
       )}

@@ -1,3 +1,4 @@
+
 .car{
     margin-right: 1rem; 
     align-self: flex-start; 
@@ -28,6 +29,20 @@
 .ride-info {
     list-style: none; 
     padding-left: 0; 
+}
+
+.ride-info-text { 
+    color: #3977ab;
+    display: inline;
+}
+
+.expand-btn { 
+    background: none;
+    border: none;
+    padding: 0;
+    color: gray; 
+    font-style: italic; 
+
 }
 
 @media only screen and (max-width: 768px) {
