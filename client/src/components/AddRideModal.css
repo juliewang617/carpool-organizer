@@ -1,0 +1,16 @@
+.add-ride-ul { 
+    list-style: none; 
+    padding-left: 0; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-items: start; 
+}
+
+.add-ride-li {
+    margin-bottom: 1rem; 
+}
+
+.add-ride-input { 
+    margin-left: 1rem; 
+}

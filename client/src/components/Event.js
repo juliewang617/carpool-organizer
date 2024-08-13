@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Arrow from "../assets/Arrow.svg";
 import Ride from "./Ride";
+import AddRideModal from "./AddRideModal";
 
 export default function Event(props) {
   // an Event has the following props: name, date, description, list of rides,
@@ -45,8 +46,10 @@ export default function Event(props) {
           <button
             style={{ border: "none", color: "#3977ab" }}
             class="rounded bg-light mb-2"
+            data-bs-toggle="modal"
+            data-bs-target="#addRideModal"
           >
-            Add Car
+            Add Ride
           </button>
           <button
             style={{ border: "none", color: "#3977ab" }}
@@ -84,6 +87,10 @@ export default function Event(props) {
           </div>
         </div>
       )}
+
+      <div id="addRideModal" class="modal fade" role="dialog">
+        <AddRideModal />
+      </div>
     </div>
   );
 }
