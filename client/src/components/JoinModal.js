@@ -6,13 +6,9 @@ export default function AddRideModal(props) {
   const [isReturn, setIsReturn] = useState(true);
 
   const [rideData, setRideData] = useState({
-    passengerSeats: 0,
-    vehicleDesc: "",
-    departTime: "",
-    departLoc: "",
-    returnTime: "",
-    returnLoc: "",
-    notes: "",
+    name: "",
+    email: "",
+    phone_number: "",
   });
 
   const handleSubmit = (e) => {

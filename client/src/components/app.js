@@ -2,6 +2,7 @@ import React from "react";
 import Event from "./Event";
 import RulesModal from "./RulesModal";
 import { eventData } from "../sampleData/eventData";
+import AdminModal from "./AdminModal";
 
 export default class extends React.Component {
   render() {
@@ -18,12 +19,17 @@ export default class extends React.Component {
           </button>
           <button
             type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#adminModal"
             style={{ background: "none", border: "none", color: "#3977ab" }}
           >
             Manage Events (Admin only)
           </button>
           <div id="rulesModal" class="modal fade" role="dialog">
             <RulesModal />
+          </div>
+          <div id="adminModal" class="modal fade" role="dialog">
+            <AdminModal />
           </div>
         </div>
 
@@ -38,7 +44,7 @@ export default class extends React.Component {
                 eventDate={event.eventDate}
                 eventDescription={event.eventDescription}
                 eventRides={event.eventRides}
-                key={event.key}
+                key={event.eventName}
               />
             ))}
           </ul>
